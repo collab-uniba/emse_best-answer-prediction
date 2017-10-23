@@ -28,7 +28,8 @@ Data have been retrieved from the following technical Q&A sites
     * `resolve`: boolean, accepted solution or not (irrelevant for questions)
 * SCN
   * JSON files, one per topic
-    * ```{  
+    * ```
+    {  
       "date_time": formatted as yyyy-mm-dd HH:MM:SS,
       "resolve": boolean, accepted solution or not (irrelevant for questions),
       "uid": unique post identifier,
@@ -41,7 +42,8 @@ Data have been retrieved from the following technical Q&A sites
       "upvotes": number of upvotes received by the question/answer,
       "type": question or answer,
       "tags":"sap_visual_enterprise.opacity"
-   }```
+   }
+   ```
 * Dwolla
   * CSV file (separator=;)
     * `date_time`: formatted as dd/mm/yy HH:MM
