@@ -13,6 +13,19 @@ Data have been retrieved from the following technical Q&A sites
 ### Formats
 * SO
 * YA
+  * CSV file
+    * `date_time`:
+    * `uid`:
+    * `type`:
+    * `author`:
+    * `title`:
+    * `text`:
+    * `views`:
+    * `answers`:
+    * `url`:
+    * `tags`:
+    * `upvotes`:
+    * `resolve`:
 * SCN
 * Dwolla
   * CSV file
