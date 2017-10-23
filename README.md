@@ -15,13 +15,25 @@ Data have been retrieved from the following technical Q&A sites
 * YA
 * SCN
 * Dwolla
+  * CSV file
+    * `date_time`: formatted as dd/mm/yy HH:MM6
+    * `resolve`: boolean, accepted solution or not
+    * `uid`: unique post identifier
+    * `type`: question or answer
+    * `views`: number time the quesiton/answer has been visualized
+    * `answers`: number of answers received by a question (empty for answers)
+    * `upvotes`: number of upvotes
+    * `author`: id of the authors
+    * `title`: title of question (inherited by answers)
+    * `text`: body of the post
+    * `url`: direct link to the thread/answer
 * Docusign
   * CSV files, separated per API programming language (i.e., .NET, Java, Python, PHP, Other)
     * `date_time`: formatted as dd/mm/yyyy HH:MM:SS
     * `resolve`: boolean, accepted solution or not
-    * `uid`: unique identifier
+    * `uid`: unique post identifier
     * `title`: title of question (inherited by answers)
-    * `url`: direct link to the post
+    * `url`: direct link to the thread/answer
     * `text`: body of the post
     * `views`: number time the quesiton/answer has been visualized
     * `answers`: number of answers received by a question (empty for answers)
