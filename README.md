@@ -28,22 +28,22 @@ Data have been retrieved from the following technical Q&A sites
     * `resolve`: boolean, accepted solution or not (irrelevant for questions)
 * SCN
   * JSON files, one per topic
-    * ```
-    {  
-      "date_time": formatted as yyyy-mm-dd HH:MM:SS,
-      "resolve": boolean, accepted solution or not (irrelevant for questions),
-      "uid": unique post identifier,
-      "title": title of question (inherited by answers),
-      "url": direct link to the thread/answer,
-      "text": body of the post,
-      "views": number time the thread/answer has been visualized,
-      "answers": number of answers received by a question (irrelevant for answers),
-      "author": name of the author,
-      "upvotes": number of upvotes received by the question/answer,
-      "type": question or answer,
-      "tags":"sap_visual_enterprise.opacity"
-   }
-   ```
+    ``` 
+      {  
+        "date_time": formatted as yyyy-mm-dd HH:MM:SS,
+        "resolve": boolean, accepted solution or not (irrelevant for questions),
+        "uid": unique post identifier,
+        "title": title of question (inherited by answers),
+        "url": direct link to the thread/answer,
+        "text": body of the post,
+        "views": number time the thread/answer has been visualized,
+        "answers": number of answers received by a question (irrelevant for answers),
+        "author": name of the author,
+        "upvotes": number of upvotes received by the question/answer,
+        "type": question or answer,
+        "tags":"sap_visual_enterprise.opacity"
+      } 
+    ```
 * Dwolla
   * CSV file (separator=;)
     * `date_time`: formatted as dd/mm/yy HH:MM
