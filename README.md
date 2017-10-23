@@ -13,27 +13,27 @@ Data have been retrieved from the following technical Q&A sites
 ### Formats
 * SO
 * YA
-  * CSV file
-    * `date_time`:
-    * `uid`:
-    * `type`:
-    * `author`:
-    * `title`:
-    * `text`:
-    * `views`:
-    * `answers`:
-    * `url`:
-    * `tags`:
-    * `upvotes`:
-    * `resolve`:
+  * CSV file (separator=;)
+    * `date_time`: double (long) format 1122483646
+    * `uid`: unique post identifier
+    * `type`: question or answer
+    * `author`: id of the authors
+    * `title`: title of question (inherited by answers)
+    * `text`: body of the post
+    * `views`: number time the thread/answer has been visualized
+    * `answers`: number of answers received by a question (empty for answers)
+    * `url`: direct link to the thread/answer
+    * `tags`: comma-separated list of tags
+    * `upvotes`: number of upvotes
+    * `resolve`: boolean, accepted solution or not
 * SCN
 * Dwolla
-  * CSV file
-    * `date_time`: formatted as dd/mm/yy HH:MM6
+  * CSV file (separator=;)
+    * `date_time`: formatted as dd/mm/yy HH:MM
     * `resolve`: boolean, accepted solution or not
     * `uid`: unique post identifier
     * `type`: question or answer
-    * `views`: number time the quesiton/answer has been visualized
+    * `views`: number time the thread/answer has been visualized
     * `answers`: number of answers received by a question (empty for answers)
     * `upvotes`: number of upvotes
     * `author`: id of the authors
@@ -41,14 +41,14 @@ Data have been retrieved from the following technical Q&A sites
     * `text`: body of the post
     * `url`: direct link to the thread/answer
 * Docusign
-  * CSV files, separated per API programming language (i.e., .NET, Java, Python, PHP, Other)
+  * CSV files (separator=;), separated per API programming language (i.e., .NET, Java, Python, PHP, Other)
     * `date_time`: formatted as dd/mm/yyyy HH:MM:SS
     * `resolve`: boolean, accepted solution or not
     * `uid`: unique post identifier
     * `title`: title of question (inherited by answers)
     * `url`: direct link to the thread/answer
     * `text`: body of the post
-    * `views`: number time the quesiton/answer has been visualized
+    * `views`: number time the thread/answer has been visualized
     * `answers`: number of answers received by a question (empty for answers)
     * `author`: id of the authors
     * `upvotes`: number of upvotes
