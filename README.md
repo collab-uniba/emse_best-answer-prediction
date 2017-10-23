@@ -17,7 +17,7 @@ Data have been retrieved from the following technical Q&A sites
 * Dwolla
 * Docusign
   * CSV files, separated per API programming language (i.e., .NET, Java, Python, PHP, Other)
-    * `date_time`
+    * `date_time`: formatted as dd/mm/yyyy HH:MM:SS
     * `resolve`: boolean, accepted solution or not
     * `uid`: unique identifier
     * `title`: title of question (inherited by answers)
