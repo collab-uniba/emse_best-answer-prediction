@@ -12,6 +12,11 @@ Data have been retrieved from the following technical Q&A sites
   
 ### Formats
 * SO
+  * CSV file (separator=;)
+    *
+    *
+    *
+    *
 * YA
   * CSV file (separator=;)
     * `date_time`: double (long) format
