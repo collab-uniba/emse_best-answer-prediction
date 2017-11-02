@@ -31,6 +31,7 @@ $ run-tuning.sh models_file data_file
 * The `models_file` param indicates a file containing (one per line) a list of models to be tuned. See the file `models/models.txt` for an example.
 * The `data_file` param indicates a file containing the data to be used for the tuning stage.
 * As output, a TXT file will be created under the `output/tuning/` subfolder for each tuned model, containing the best param configuration and execution times.
+
 **Note** The tuning step is very time consuming and will take _several_ hours for each model; the more models in the input file, the longer the script will take to finish.
 
 ### Prediction experiment
