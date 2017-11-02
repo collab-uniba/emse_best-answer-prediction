@@ -28,11 +28,23 @@ To start the automated parameter tuning via `caret`, run the `run-tuning.sh` scr
 ```
 $ run-tuning.sh models_file data_file
 ```
-* The `models_file` param indicates a file containing (one per line) a list of models to be tuned. See the file `models/models.txt` for an example.
-* The `data_file` param indicates a file containing the data to be used for the tuning stage.
+* The `models_file` param indicates the file containing (one per line) a list of models (learners) to be tuned. See the file `models/models.txt` for an example.
+* The `data_file` param indicates the file containing the data to be used for the tuning stage.
 * As output, a TXT file will be created under the `output/tuning/` subfolder for each tuned model, containing the best param configuration and execution times.
 
 **Note** The tuning step is very time consuming and will take _several_ hours for each model; the more models in the input file, the longer the script will take to finish.
 
 ### Prediction experiment
-Once the models have been tuned, you can execute the best-answer prediction experiment.
+Once the models have been tuned, you can execute the best-answer prediction experiment. Run the `run-predictions.sh` script as described below. 
+```
+$ run-predictions.sh training_file models_file data_file
+```
+* The `training_file` param indicates the file containing the dataset for training the learners.
+* The `models_file` param indicates the file containing (one per line) a list of models (learners) to be used in the prediction experiment. 
+* The `data_file` param indicates the file containing the test dataset.
+* As output, the following folder and files will be created:
+  * `output/cm` - containing a TXT file for each test set and model with the confusion matrix
+  * `output/misclassifications` - containing a TXT file for each test set and model with listing the cases where wrong predictions (errors) occurred
+  * `output/plots` - containing a ROC plot image file for each test set and model specified as input
+
+**Note** Before running the prediction experimetn, the file `test.R` must be manually edited in order customize the `tuneGrid` var (`dataframe`) containing the best param configuration for each learner model. As of now, the script contains the grids for the 4 models in the file `models/top-cluster.txt`.
