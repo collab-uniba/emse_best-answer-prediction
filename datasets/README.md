@@ -1,6 +1,6 @@
 
 ### Formats
- * SO
+ * SO %% Consider providing a sql or csv file export %%
    * CSV file (separator=;)
      * ``
      * ``
