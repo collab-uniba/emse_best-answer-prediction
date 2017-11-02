@@ -16,7 +16,7 @@
      * ``
  * YA
    * CSV file (separator=;)
-     * `date_time`: double (long) format
+     * `date_time`: integer
      * `uid`: unique post identifier
      * `type`: question or answer
      * `author`: name of the author
