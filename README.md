@@ -58,14 +58,16 @@ $ Rscript skesd-test metrics_outfiles runsN
 * `runsN` - the number of runs, must match the same param from the previous step 
 
 ### Feature selection
-
+The following script perform wrapper-based feature selection using the R package `Boruta`; for the sake of completeness, it will also perform Correlation-based Feature Selection (CFS).
 ```
 $ Rscript feature-selection.R dataset_file dataset_name featN
 ```
 * `dataset_file` - the dataset used for feature selection
 * `dataset_name` - the name of the dataset, chosen in `{so, docusign, dwolla, scn, yahoo}`; `so` by default
 * `featN` - the number of feature to select, 10 by default
-* As output, ...
+* As output, the script will generate the file `output/feature-selection/feature-subset.txt` containing:
+  * The output of `Boruta`
+  * The output of `CFS`, with both Spearman and Pearson correlation values
 
 ### Prediction experiment
 Once the models have been tuned, you can execute the best-answer prediction experiment. Run the `run-predictions.sh` script as described below. 
