@@ -15,13 +15,14 @@ Datasets can be downloaded from the [datasets](https://github.com/collab-uniba/d
 ### Formats
 A description of dataset file formats is also available [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets).
 
-## R scripts
+## Python and  R scripts
 ### Setup
 To ensure proper execution, first run:
 ```
 $ RScripts requirements.R
+$ pip install -r requirements.txt
 ```
-This will check for the presence and eventually install all required packages.
+These commands will check for the presence and eventually install all required packages for R and Python.
 
 ### Automated param tuning
 To start the automated parameter tuning via `caret`, run the `run-tuning.sh` script as described below. 
