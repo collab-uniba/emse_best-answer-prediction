@@ -16,7 +16,7 @@
      * ``
  * YA
    * CSV file (separator=;)
-     * `date_time`: integer
+     * `date_time`: integer, with format yyyy-dd-mm HH:MM:SS (in Python, convert as `datetime.datetime.fromtimestamp(int(...))`)
      * `uid`: unique post identifier
      * `type`: question or answer
      * `author`: name of the author
