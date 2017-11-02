@@ -10,9 +10,9 @@ Data have been retrieved from the following technical Q&A sites
   * [Dwolla](https://discuss.dwolla.com/c/api-support) (discontinued, read-only)
   * [Docusign](https://www.docusign.com) (discontinued, unavailable)
   
-They can be downloaded from the [dataset](https://github.com/collab-uniba/dataset_best-answers_emse) subfolder.
+They can be downloaded from the [dataset](https://github.com/collab-uniba/dataset_best-answers_emse/dataset) subfolder.
   
 ### Formats
-A description of dataset file formats is available [here](https://github.com/collab-uniba/dataset_best-answers_emse/README.md).
+A description of dataset file formats is available [here](https://github.com/collab-uniba/dataset_best-answers_emse/dataset/README.md).
 
 ## R scripts
