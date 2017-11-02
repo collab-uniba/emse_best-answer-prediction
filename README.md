@@ -13,6 +13,6 @@ Data have been retrieved from the following technical Q&A sites
 They can be downloaded from the [datasets](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets) subfolder.
   
 ### Formats
-A description of dataset file formats is available [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets/README.md).
+A description of dataset file formats is available [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets).
 
 ## R scripts
