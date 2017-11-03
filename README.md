@@ -1,7 +1,7 @@
-# Dataset and R scripts for best-answers prediction in Technical Q&A sites
+# Datasets and R scripts for best-answers prediction in Technical Q&A sites
 
-## Datasets
-Data have been retrieved from the following technical Q&A sites:
+## Original Datasets
+Original datasets refer to the data extracted "as is" from the following technical Q&A sites:
 * Modern platforms
   * [Stack Overflow (SO)](https://www.stackoverflow.com) 
   * [Yahoo! Answer (YA)](https://answers.yahoo.com/dir/index?sid=396545663&link=list) (category: _Programming & Design_)
@@ -9,20 +9,17 @@ Data have been retrieved from the following technical Q&A sites:
 * Legacy platforms
   * [Dwolla](https://discuss.dwolla.com/c/api-support) (discontinued, read-only)
   * [Docusign](https://www.docusign.com) (discontinued, unavailable)
-  
-Datasets can be downloaded from the [datasets](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets) subfolder.
-  
-### Formats
-A description of dataset file formats is also available [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets).
+
+### Download
+Datasets and the description of their file formats are available be downloaded from the [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets).
 
 ## Python and  R scripts
 ### Setup
-To ensure proper execution, first run:
+To ensure proper execution, first run the following commands to check for the presence and eventually install all the required packages for R and Python.
 ```
 $ RScripts requirements.R
 $ pip install -r requirements.txt
 ```
-These commands will check for the presence and eventually install all required packages for R and Python.
 
 ### Automated param tuning
 To start the automated parameter tuning via `caret`, run the `run-tuning.sh` script as described below. 
