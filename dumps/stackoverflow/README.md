@@ -18,8 +18,8 @@ Check the following [Gist](https://gist.github.com/tundo91/1e074af39d90629252a7d
 # * Edited to import local XML files
 # * Updated creat table procedures to support Sept.-12-2016 dataset dump version
 
-create database cooking_stackexchange_com DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
-use cooking_stackexchange_com;
+create database stackoverflow DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+use stackoverflow;
 
 create table Badges (
   Id INT NOT NULL PRIMARY KEY,
