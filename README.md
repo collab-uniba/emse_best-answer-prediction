@@ -14,7 +14,7 @@ Original dumps refer to the data extracted "as is" from the following technical 
 Data dumps and the description of their file formats are available be downloaded from the [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps).
 
 ## Experimental datasets
-The datasets containing the 22 features extracted from the data dump each Q&A site are available for download [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/input).
+The datasets containing the features extracted from the data dump of each Q&A site are available for download [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/input).
 A description of each feature is also avaialble.
 
 ## Python and  R scripts
