@@ -1,19 +1,6 @@
-
-### Formats
- * SO %% Consider providing a sql or csv file export %%
-   * CSV file (separator=;)
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
-     * ``
+### Dump file formats
+ * Stack Overflow 
+     * See [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/stackoverflow).
  * YA
    * CSV file (separator=;)
      * `date_time`: integer, with format yyyy-dd-mm HH:MM:SS (in Python, convert as `datetime.datetime.fromtimestamp(int(...))`)
@@ -28,7 +15,7 @@
      * `tags`: commaseparated list of tags
      * `upvotes`: number of upvotes received by the question/answer
      * `resolve`: boolean, accepted solution or not (irrelevant for questions)
- * SCN
+ * Sap Community Network (SCN)
    * JSON files, one per topic
      ``` 
        {  
