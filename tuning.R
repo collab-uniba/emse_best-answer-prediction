@@ -17,7 +17,7 @@ if(!dir.exists(output_dir))
   dir.create(output_dir, showWarnings = FALSE, recursive = TRUE, mode = "0777")
 
 # these params always exist if launched by the bash script run-tuning.sh
-models_file <- ifelse(is.na(args[3]), "models/models1.txt", args[3])
+models_file <- ifelse(is.na(args[3]), "models/models.txt", args[3])
 csv_file <- ifelse(is.na(args[4]), "input/test.csv", args[4])
 
 # logs errors to file
@@ -62,7 +62,6 @@ for (i in 1:length(predictorsNames)){
 }
 # exclude rows with Na, NaN and Inf (missing values)
 SO <- na.omit(SO)
-#SO <- SO[complete.cases(SO), ]
 
 # create stratified training and test sets from SO dataset
 splitIndex <- createDataPartition(SO[,outcomeName], p = .70, list = FALSE)

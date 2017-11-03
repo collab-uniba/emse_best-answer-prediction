@@ -33,6 +33,11 @@ temp <- setup_dataframe(dataframe = temp, outcomeName = outcomeName, excluded_pr
                         time_format="%Y-%m-%d %H:%M:%S", normalize = FALSE)
 SO <- temp[[1]]
 predictorsNames <- temp[[2]]
+# normality adjustments for indipendent vars (predictors)
+# ln(x+1) transformation mitigates skeweness
+for (i in 1:length(predictorsNames)){
+  SO[,predictorsNames[i]] <- log1p(SO[,predictorsNames[i]])
+}
 
 choice <- ifelse(is.na(args[2]), "so", args[2])
 #choice <- "test"
@@ -79,7 +84,7 @@ rm(temp)
 # garbage collection
 gc()
 
-models_file <- ifelse(is.na(args[3]), "models/models.txt", args[3])
+models_file <- ifelse(is.na(args[3]), "models/top-cluster.txt", args[3])
 classifiers <- readLines(models_file)
 predictions <- c()
 cmatrices <- c()
