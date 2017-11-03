@@ -1,0 +1,5 @@
+Jinja2==2.8
+MarkupSafe==0.23
+numpy==1.11.0
+PyExcelerate==0.6.7
+six==1.10.0
