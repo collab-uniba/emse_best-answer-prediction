@@ -11,3 +11,4 @@ Given the size of the original Stack Overflow dump, the quickest way to obtain i
 * stackoverflow.com-Votes.7z
 
 Check the following [Gist](https://gist.github.com/tundo91/1e074af39d90629252a7df3fc1066397) for an example of how to perform the import.
+https://gist.github.com/tundo91/1e074af39d90629252a7df3fc1066397#file-stackoverflow-sql
