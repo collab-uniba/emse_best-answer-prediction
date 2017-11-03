@@ -1,7 +1,7 @@
 # Datasets and R scripts for best-answers prediction in Technical Q&A sites
 
-## Original Datasets
-Original datasets refer to the data extracted "as is" from the following technical Q&A sites:
+## Original datasets
+Original datasets refer to the dumnp of data extracted "as is" from the following technical Q&A sites:
 * Modern platforms
   * [Stack Overflow (SO)](https://www.stackoverflow.com) 
   * [Yahoo! Answer (YA)](https://answers.yahoo.com/dir/index?sid=396545663&link=list) (category: _Programming & Design_)
@@ -12,6 +12,10 @@ Original datasets refer to the data extracted "as is" from the following technic
 
 ### Download
 Datasets and the description of their file formats are available be downloaded from the [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/datasets).
+
+## Extracted-feature datasets
+The datasets containing the 22 features extracted from the data dumo each Q&A site are available for download [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/input).
+A description of each feature extracted is also avaialble.
 
 ## Python and  R scripts
 ### Setup
