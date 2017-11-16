@@ -43,7 +43,8 @@ SO <- read.csv(csv_file, header = TRUE, sep=",")
 # name of outcome var to be predicted
 outcomeName <- "solution"
 # list of predictor vars by name
-excluded_predictors <- c("answer_uid", "upvotes", "upvotes_rank")
+excluded_predictors <- c("resolved", "answer_uid", "question_uid", "views", "views_rank",
+                         "has_code_snippet", "has_tags", "loglikelihood_descending_rank", "F.K_descending_rank")
 SO <- SO[ , !(names(SO) %in% excluded_predictors)]
 predictorsNames <- names(SO[,!(names(SO)  %in% c(outcomeName))]) # removes the var to be predicted from the test set
 
@@ -74,7 +75,7 @@ gc()
 
 # 10-fold CV repetitions
 fitControl <- trainControl(
-  method = "cv",
+  method = "repeatedcv",
   number = 10,
   ## repeated ten times, works only with method="repeatedcv", otherwise 1
   repeats = 10,

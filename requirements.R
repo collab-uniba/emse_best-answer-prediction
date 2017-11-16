@@ -45,6 +45,10 @@ if(!require("DMwR", quietly = TRUE)){
   install.packages(c("TTR", "DMwR"), dependencies = c("Imports", "Depends"), repos = "http://cran.mirror.garr.it/mirrors/CRAN/")
 }
 
+if(!require("lubridate", quietly = TRUE)){
+  install.packages(c("lubridate"), dependencies = c("Imports", "Depends"), repos = "http://cran.mirror.garr.it/mirrors/CRAN/")
+}
+
 # gpls is not available anymore in CRAN as of R 3.3.0
 if(!require("gpls", quietly = TRUE)){
   source("https://bioconductor.org/biocLite.R")

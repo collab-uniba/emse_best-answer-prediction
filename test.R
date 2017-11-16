@@ -30,14 +30,9 @@ excluded_predictors <- c("resolved", "answer_uid", "question_uid", "views", "vie
 csv_file <- ifelse(is.na(args[1]), "input/so_341k.csv", args[1])
 temp <- read.csv(csv_file, header = TRUE, sep=",")
 temp <- setup_dataframe(dataframe = temp, outcomeName = outcomeName, excluded_predictors = excluded_predictors,
-                        time_format="%Y-%m-%d %H:%M:%S", normalize = FALSE)
+                        time_format="%Y-%m-%d %H:%M:%S", normalize = TRUE, na_omit = TRUE)
 SO <- temp[[1]]
 predictorsNames <- temp[[2]]
-# normality adjustments for indipendent vars (predictors)
-# ln(x+1) transformation mitigates skeweness
-for (i in 1:length(predictorsNames)){
-  SO[,predictorsNames[i]] <- log1p(SO[,predictorsNames[i]])
-}
 
 choice <- ifelse(is.na(args[2]), "so", args[2])
 #choice <- "test"
@@ -107,7 +102,7 @@ for(i in 1:length(classifiers)){
   model <- caret::train(solution ~ ., 
                         data = SO,
                         method = classifier,
-                        trControl = trainControl(method="none", classProbs = TRUE, sampling = "down"),  
+                        trControl = trainControl(method="none", classProbs = TRUE),  
                         tuneGrid = grid,  preProcess = c("center", "scale"))
   
   pred_prob <- predict(model, testing[,predictorsNames], type = 'prob')
