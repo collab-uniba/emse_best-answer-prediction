@@ -3,12 +3,12 @@
 
 *** Table 9 (complete). ***
 
-| Prediction model |                     Default parameter configuration                     | Default AUC  performance |    Optimal parameter  configuration   | Optimal AUC  performance | Tuning runtime |
-|:----------------:|:-----------------------------------------------------------------------:|:------------------------:|:-------------------------------------:|:------------------------:|:--------------:|
-|      xgbTree     |                                   nrounds = 100 max_depth = 1 eta = 0.3 |                          | nrounds = 200 max_depth = 4 eta = 0.1 |                          |     6h 47m     |
-|      pcaNNet     |                                                      size = 1 decay = 0 |                          |                                       |                          |                |
-|       earth      |                                                nprune = NULL degree = 1 |                          |                                       |                          |                |
-|        gbm       | n.trees = 100 interaction.depth = 1 shrinkage = 0.1 n.minobsinnode = 10 |                          |                                       |                          |                |
+| Prediction model |                        Default parameter configuration                        | Default AUC  performance |                        Optimal parameter  configuration                       | Optimal AUC  performance | Tuning runtime |
+|:----------------:|:-----------------------------------------------------------------------------:|:------------------------:|:-----------------------------------------------------------------------------:|:------------------------:|:--------------:|
+|      xgbTree     | `nrounds = 100,  max_depth = 1,  eta = 0.3`                                   |                          | `nrounds = 200,  max_depth = 4,  eta = 0.1`                                   |            .94           |     6h 47m     |
+|      pcaNNet     | `size = 1, decay = 0`                                                         |                          | `size = 7, decay = 0.1`                                                       |            .93           |     2h 20m     |
+|       earth      | `nprune = NULL, degree = 1`                                                   |                          | `nprune = 15, degree = 1`                                                     |            .93           |     3h 53m     |
+|        gbm       | `n.trees = 100, interaction.depth = 1,  shrinkage = 0.1, n.minobsinnode = 10` |                          | `n.trees = 250, interaction.depth = 3,  shrinkage = 0.1, n.minobsinnode = 10` |            .94           |     8h 44m     |
 
 ### Timewise analysis plots
 ![xgbtree plot](./xgbTree_auc_plot.tiff)
