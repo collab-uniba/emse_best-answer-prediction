@@ -1,7 +1,8 @@
 
 ### Automated parameter tuning
 
-*** Table 9 (complete). 
+*** Table 9 (complete). ***
+
 | **Prediction model** | Default parameter configuration | Default AUC  performance | Optimal parameter  configuration | Optimal AUC  performance | Tuning time |
 |:--------------------:|:-------------------------------:|:------------------------:|:--------------------------------:|:------------------------:|:-----------:|
 |        xgbTree       |                                 |                          |                                  |                          |             |
