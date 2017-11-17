@@ -25,7 +25,7 @@ $ RScripts requirements.R
 $ pip install -r requirements.txt
 ```
 
-### Automated param tuning
+### Automated parameter tuning
 To start the automated parameter tuning via `caret`, run the `run-tuning.sh` script as described below. 
 ```
 $ run-tuning.sh models_file data_file
@@ -35,6 +35,13 @@ $ run-tuning.sh models_file data_file
 * As output, a TXT file will be created under the `output/tuning/` subfolder for each tuned model, containing the best param configuration and execution times.
 
 _Note_. The tuning step is very time consuming and will take _several_ hours for each model; the more models in the input file, the longer the script will take to finish.
+
+### Default (untuned) model performance
+To compute the default AUC performance with the default parameter setting is obtained running the script below.
+```
+$ RScripts untuned-perf
+```
+* As output, the file `output/untuned/AUC-all-models.txt` will be created with the AUC values.
 
 ### Scott-Knott ESD model clustering 
 To cluster model by AUC performance into non-overlapping groups, run the following scripts:
