@@ -29,8 +29,8 @@
 |      treebag     | `-`                                                                           |                          | `-`                                                                           |                          |     06h 07m    |
 |        J48       | `C = `                                                                        |                          | `C = `                                                                        |                          |     01h 30m    |
 |       rpart      | `cp = `                                                                       |                          | `cp = `                                                                       |                          |     00h 12m    |
-|     svmLinear    |                                                                               |                          |                                                                               |                          |     15h 34m    |
-|       JRip       |                                                                               |                          |                                                                               |                          |     06h 50m    |
+|     svmLinear    | `C = `                                                                        |                          | `C = `                                                                        |                          |     15h 34m    |
+|       JRip       | `NumOpt = `                                                                   |                          | `NumOpt = `                                                                   |                          |     06h 50m    |
 
 ### Timewise analysis plots
 ![xgbtree plot](./xgbTree_auc_plot.tiff)
