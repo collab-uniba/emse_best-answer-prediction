@@ -1,7 +1,7 @@
 
 ### Automated parameter tuning
 
-***Table 9 (complete). Default and optimal parameter configuration with AUC performance and overall tuning runtime (in hours) for the 26 models (`?` indicates a value not explicitly mentioned in documentation, but deduced from the implementation).***
+***Table 9 (complete). Default and optimal parameter configuration with AUC performance and overall tuning runtime (in hours) for the 26 models (`?` indicates a value not explicitly mentioned in documentation, but deduced from the implementation; for parameters with no default values, we used the first valid value).***
 
 | Prediction model |                        Default parameter configuration                        | Default AUC  performance |                        Optimal parameter configuration                       | Optimal AUC  performance | Tuning runtime |
 |:----------------:|:-----------------------------------------------------------------------------:|:------------------------:|:----------------------------------------------------------------------------:|:------------------------:|:--------------:|
