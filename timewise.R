@@ -61,7 +61,7 @@ excluded_predictors <- c("resolved", "answer_uid", "question_uid", "views", "vie
                          "has_code_snippet", "has_tags", "loglikelihood_descending_rank", "F.K_descending_rank")
 
 # load dataset
-csv_file <- ifelse(is.na(args[1]), "input/esej_features_341k.csv", args[1])
+csv_file <- ifelse(is.na(args[1]), "input/so_341k.csv", args[1])
 temp <- read.csv(csv_file, header = TRUE, sep=",")
 temp$year_mon <- as.yearmon((temp$date_time))
 #min_year_mon <- min(temp$year_mon)

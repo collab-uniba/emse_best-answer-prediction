@@ -18,7 +18,7 @@ if(!dir.exists(output_dir))
 
 # these params always exist if launched by the bash script run-tuning.sh
 models_file <- ifelse(is.na(args[3]), "models/models.txt", args[3])
-csv_file <- ifelse(is.na(args[4]), "input/test.csv", args[4])
+csv_file <- ifelse(is.na(args[4]), "input/example.csv", args[4])
 
 # logs errors to file
  error_file <- paste(date_time, "log", sep = ".")

@@ -5,7 +5,7 @@ options(show.error.locations=TRUE)
 
 # files with features
 feat_file <- args[1]
-feat_file <- ifelse(is.na(feat_file),"input/esej_features_85k.csv", feat_file)
+feat_file <- ifelse(is.na(feat_file),"input/example.csv", feat_file)
 # choice
 choice <- args[2]
 choice <- ifelse(is.na(choice), "so", choice)
