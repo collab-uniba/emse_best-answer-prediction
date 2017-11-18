@@ -147,7 +147,7 @@ excluded_predictors <-
   )
 
 # load dataset
-csv_file <- ifelse(is.na(args[1]), "input/esej_features_171k.csv", args[1])
+csv_file <- ifelse(is.na(args[1]), "input/example.csv", args[1])
 temp <- read.csv(csv_file, header = TRUE, sep = ",")
 temp <-
   setup_dataframe(
@@ -175,11 +175,9 @@ models_file <-
 classifiers <- readLines(models_file)
 dataset <- c("so")
 
-# 10-fold CV repetitions
 fitControl <- trainControl(
   method = "none",
   verboseIter = FALSE,
-  #savePredictions = TRUE,
   # binary problem
   summaryFunction = twoClassSummary,
   classProbs = TRUE,
@@ -213,7 +211,8 @@ for (j in 1:length(dataset)) {
     print(paste("Testing performance of classifier", classifier))
     
     if(classifier == "gamboost") {
-      ## quick fix, has_links predictor causes error
+      # gamboost is bugged, has_links predictor causes error
+      # quick fix: remove
       predictorsNames <- predictorsNames[predictorsNames  != "has_links"] 
       #SO <- SO[ , !(names(SO) %in% c("has_links"))]
       training <- training[ , !(names(training) %in% c("has_links"))]
@@ -227,8 +226,6 @@ for (j in 1:length(dataset)) {
       trControl = fitControl,
       metric = "ROC",
       tuneGrid = default_grid(classifier, training)
-      #preProcess = c("center") , #"scale")
-      #tuneLength = 5 # values per param
     )
     
     pred_prob <-
@@ -240,7 +237,6 @@ for (j in 1:length(dataset)) {
       c(aucs, roc(as.numeric(testing[, outcomeName]) - 1, pred_prob[, 2])$auc)
     aucs <- round(aucs, digits = 2)
   }
-  
 }
 
 # finally, save all models predictions to text file ...

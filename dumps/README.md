@@ -1,6 +1,7 @@
 ### Dump file formats
  * Stack Overflow 
-     * See [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/stackoverflow).
+     * For more information, see [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/stackoverflow).
+     * TODO describe format
  * YA
    * CSV file (separator=;)
      * `date_time`: integer, with format yyyy-dd-mm HH:MM:SS (in Python, convert as `datetime.datetime.fromtimestamp(int(...))`)
