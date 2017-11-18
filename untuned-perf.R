@@ -171,7 +171,7 @@ rm(temp)
 gc()
 
 models_file <-
-  ifelse(is.na(args[2]), "models/models.txt", args[2])
+  ifelse(is.na(args[2]), "models/top-cluster", args[2])
 classifiers <- readLines(models_file)
 dataset <- c("so")
 
