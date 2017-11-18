@@ -39,9 +39,11 @@ _Note_. The tuning step is very time consuming and will take _several_ hours for
 ### Default (untuned) model performance
 To compute the default AUC performance with the default parameter setting is obtained running the script below.
 ```
-$ RScripts untuned-perf
+$ sh run-default-predictions.sh path/to/input/so-dataset.csv path/to/models/models.txt
 ```
 * As output, the file `output/untuned/AUC-all-models.txt` will be created with the AUC values.
+
+_Note_. The prediction step is very time consuming and will take _several_ hours to complete; the more models in the input file and the larger the dataset chosen, the longer the script will take to finish.
 
 ### Scott-Knott ESD model clustering 
 To cluster model by AUC performance into non-overlapping groups, run the following scripts:

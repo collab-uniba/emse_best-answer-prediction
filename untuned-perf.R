@@ -1,12 +1,14 @@
 # This file computes the AUC performance for the selected model at default param configuration.
 # It uses the same SO subsample used in the tuning stage.
 
-# enable commandline arguments from script launched using Rscript
-args <- commandArgs(TRUE)
+options(java.parameters = "-Xmx16g")
+args<-commandArgs(TRUE)
 
 library(caret)
 library(ROCR)
 library(pROC)
+library(rJava)
+.jinit(parameters="-Xmx16g")
 
 set.seed(875)
 
@@ -145,7 +147,7 @@ excluded_predictors <-
   )
 
 # load dataset
-csv_file <- ifelse(is.na(args[1]), "input/esej_features_341k.csv", args[1])
+csv_file <- ifelse(is.na(args[1]), "input/esej_features_171k.csv", args[1])
 temp <- read.csv(csv_file, header = TRUE, sep = ",")
 temp <-
   setup_dataframe(
@@ -171,7 +173,6 @@ gc()
 models_file <-
   ifelse(is.na(args[2]), "models/models.txt", args[2])
 classifiers <- readLines(models_file)
-
 dataset <- c("so")
 
 # 10-fold CV repetitions
