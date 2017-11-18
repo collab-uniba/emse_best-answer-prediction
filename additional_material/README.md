@@ -1,5 +1,5 @@
 
-### Automated parameter tuning
+## Automated parameter tuning
 
 ***Table 9 (complete). Default and optimal parameter configuration with AUC performance and overall tuning runtime (in hours) for the 26 models (`?` indicates a value not explicitly mentioned in documentation, but deduced from the implementation; for parameters with no default values, we used the first valid value).***
 
@@ -33,11 +33,11 @@
 |       JRip       | `NumOpt = 2`                                                                  |            .55           | `NumOpt = 5`                                                                 |            .67           |     06h 50m    |
 
 
-### Timewise analysis plots
-![xgbtree plot](./xgbTree_auc_plot.tiff)
+## Timewise analysis 
+![xgbtree plot](../output/timewise/plots/xgbTree/xgbTree_auc_plot.tiff)
 
 ***Fig. 7. Plot of the xgbTree classifier performance (AUC) for the timewise analysis.***
 
-![gbm plot](./gbm_auc_plot.tiff)
+![gbm plot](../output/timewise/plots/gbm/gbm_auc_plot.tiff)
 
 ***Fig. 7 (addition). Plot of the gbm classifier performance (AUC) for the timewise analysis.***
