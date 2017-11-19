@@ -1,4 +1,7 @@
 ## Download
+The Stack Overflow dump (Jan. 2016) used in the paper can be dowloaded from [here](http://....) (tgz, ~9GB). This is an external link that won't be downloaded through `git clone`,
+
+### Or...
 Given the size of the original Stack Overflow dump, the quickest way to obtain it is through the original torrent files, hosted at [archive.org](https://archive.org/download/stackexchange). The following are the files that must be imported to your local database.
 
 * stackoverflow.com-Badges.7z
@@ -10,7 +13,7 @@ Given the size of the original Stack Overflow dump, the quickest way to obtain i
 * stackoverflow.com-Users.7z
 * stackoverflow.com-Votes.7z
 
-## Import
+### Import
 Check the following [Gist](https://gist.github.com/tundo91/1e074af39d90629252a7df3fc1066397) for an example of how to perform the import.
 ```sql
 # Copyright (c) 2013 Georgios Gousios
@@ -61,7 +64,6 @@ CREATE TABLE PostLinks (
   LinkTypeId SMALLINT NOT NULL
 );
 
-
 CREATE TABLE Posts (
     Id INT NOT NULL PRIMARY KEY,
     PostTypeId TINYINT NOT NULL ,
@@ -95,7 +97,6 @@ CREATE TABLE Tags (
   WikiPostId INT DEFAULT NULL
 );
 
-
 CREATE TABLE Users (
     Id INT NOT NULL PRIMARY KEY,
     Reputation INT NOT NULL,
@@ -122,8 +123,6 @@ CREATE TABLE Votes (
     CreationDate DATETIME,
     BountyAmount INT
 );
-
-
 
 load xml infile '/path/to.../Badges.xml'
 into table Badges
@@ -167,4 +166,14 @@ create index Posts_idx_2 on Posts(ParentId);
 create index Posts_idx_3 on Posts(OwnerUserId);
 create index Posts_idx_4 on Posts(LastEditorUserId);
 create index Votes_idx_1 on Votes(PostId);
+```
+### CSV export
+Once the dump is imported into MySQL, you can export all the answers in the DB through the following command.
+```sql
+select PQ.Id, PQ.Body, PQ.Title, PQ.Tags, PQ.AcceptedAnswerId, PQ.AnswerCount, PQ.CreationDate, PA.Id, PA.CreationDate, PA.Score, PA.Body
+from Posts as PA, Posts as PQ   
+where PA.PostTypeId = 2 and PA.ParentId = PQ.Id
+order by PA.ParentId
+INTO OUTFILE '/path/to/all_answers.csv' 
+fields fields terminated by ';' enclosed by '"';
 ```
