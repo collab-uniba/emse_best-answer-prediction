@@ -1,7 +1,7 @@
 ### Dump file formats
  * [Stack Overflow](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/stackoverflow)
      * TODO describe format
- * [Yahoo! Answers](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/ya)
+ * [Yahoo! Answers](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/yahoo)
    * CSV file (separator=;)
      * `date_time`: integer, with format yyyy-dd-mm HH:MM:SS (in Python, convert as `datetime.datetime.fromtimestamp(int(...))`)
      * `uid`: unique post identifier
