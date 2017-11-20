@@ -1,5 +1,5 @@
 ## Download
-The Stack Overflow dump (Jan. 2016) used in the paper can be dowloaded from [here](http://....) (tgz, ~9GB). This is an external link that won't be downloaded through `git clone`,
+The Stack Overflow dump (Jan. 2016) used in the paper can be dowloaded from [here](http://....) (tgz, ~10GB). This is an external link that won't be downloaded through `git clone`.
 
 ### Or...
 Given the size of the original Stack Overflow dump, the quickest way to obtain it is through the original torrent files, hosted at [archive.org](https://archive.org/download/stackexchange). The following are the files that must be imported to your local database.
@@ -13,7 +13,7 @@ Given the size of the original Stack Overflow dump, the quickest way to obtain i
 * stackoverflow.com-Users.7z
 * stackoverflow.com-Votes.7z
 
-### Import
+### Import into MySQL database
 Check the following [Gist](https://gist.github.com/tundo91/1e074af39d90629252a7df3fc1066397) for an example of how to perform the import.
 ```sql
 # Copyright (c) 2013 Georgios Gousios
