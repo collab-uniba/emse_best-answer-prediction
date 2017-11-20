@@ -1,5 +1,5 @@
 ## Download
-The Stack Overflow dump (Jan. 2016) used in the paper can be dowloaded from [here](http://....) (tgz, ~10GB). This is an external link that won't be downloaded through `git clone`.
+The Stack Overflow dump (Jan. 2016) used in the paper can be dowloaded from [here](https://mega.nz/#!JccinSTL) (tgz, ~10GB). This is an external link that won't be downloaded through `git clone`.
 
 ### Or...
 Given the size of the original Stack Overflow dump, the quickest way to obtain it is through the original torrent files, hosted at [archive.org](https://archive.org/download/stackexchange). The following are the files that must be imported to your local database.
