@@ -11,7 +11,7 @@ Original dumps refer to the data extracted "as is" from the following technical 
   * [Docusign](https://www.docusign.com) (discontinued, unavailable)
 
 ### Download
-Data dumps and the description of their file formats are available be downloaded from the [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps).
+Data dumps and the description of their file formats are available be downloaded from [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps).
 
 ## Experimental datasets
 The datasets containing the features extracted from the data dump of each Q&A site are available for download [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/input).
