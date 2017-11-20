@@ -170,8 +170,8 @@ create index Votes_idx_1 on Votes(PostId);
 ### CSV export
 Once the dump is imported into MySQL, you can export all the answers in the DB through the following command.
 ```sql
-select PQ.Id, PQ.Body, PQ.Title, PQ.Tags, PQ.AcceptedAnswerId, PQ.AnswerCount, PQ.CreationDate, PA.Id, PA.CreationDate, 
-       PA.Score, PA.Body
+select PQ.Id, PQ.Body, PQ.Title, PQ.Tags, PQ.AcceptedAnswerId, PQ.AnswerCount, PQ.CreationDate, PA.Id,
+       PA.CreationDate, PA.Score, PA.Body
 from Posts as PA, Posts as PQ   
 where PA.PostTypeId = 2 and PA.ParentId = PQ.Id
 order by PA.ParentId
