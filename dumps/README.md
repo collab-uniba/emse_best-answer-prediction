@@ -1,6 +1,17 @@
 ### Dump file formats
  * [Stack Overflow](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/stackoverflow)
-     * TODO describe format
+     * CSV file (separator=;)
+       * `question_id`: numeric, unique identifier
+       * `question_body`: string, enclosed by `"`, with HTML tags
+       * `question_title`: string
+       * `question_tags`: string, comma separated list of tags
+       * `accepted_answer_id`:  id of the question accepted as solution or empty otherwise
+       * `answers_count`: numeric, number of answers in the question thread
+       * `question_date`: string, formatted as %Y-%m-%d %H:%M:%S
+       * `answer_id`: numeric, unique identifier
+       * `answer_date`: string, formatted as %Y-%m-%d %H:%M:%S
+       * `answer_upvotescore`: number, upvotes-downvotes received
+       * `answer_body`: string, enclosed by `"`, with HTML tags
  * [Yahoo! Answers](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/yahoo)
    * CSV file (separator=;)
      * `date_time`: integer, with format yyyy-dd-mm HH:MM:SS (in Python, convert as `datetime.datetime.fromtimestamp(int(...))`)
