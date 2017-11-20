@@ -1,8 +1,7 @@
 ### Dump file formats
- * Stack Overflow 
-     * For more information, see [here](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/stackoverflow).
+ * [Stack Overflow](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/stackoverflow)
      * TODO describe format
- * YA
+ * [Yahoo! Answers](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/ya)
    * CSV file (separator=;)
      * `date_time`: integer, with format yyyy-dd-mm HH:MM:SS (in Python, convert as `datetime.datetime.fromtimestamp(int(...))`)
      * `uid`: unique post identifier
@@ -16,7 +15,7 @@
      * `tags`: commaseparated list of tags
      * `upvotes`: number of upvotes received by the question/answer
      * `resolve`: boolean, accepted solution or not (irrelevant for questions)
- * Sap Community Network (SCN)
+ * [Sap Community Network (SCN)](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/scn)
    * JSON files, one per topic
      ``` 
        {  
@@ -34,7 +33,7 @@
          "tags":"sap_visual_enterprise.opacity"
        } 
      ```
- * Dwolla
+ * [Dwolla](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/dwolla)
    * CSV file (separator=;)
      * `date_time`: formatted as dd/mm/yy HH:MM
      * `resolve`: boolean, accepted solution or not (irrelevant for questions)
@@ -47,7 +46,7 @@
      * `title`: title of question (inherited by answers)
      * `text`: body of the post
      * `url`: direct link to the thread/answer
- * Docusign
+ * [Docusign](https://github.com/collab-uniba/dataset_best-answers_emse/tree/master/dumps/docusign)
    * CSV files (separator=;), separated per API programming language (i.e., .NET, Java, Python, PHP, Other)
      * `date_time`: formatted as dd/mm/yyyy HH:MM:SS
      * `resolve`: boolean, accepted solution or not (irrelevant for questions)
