@@ -93,3 +93,6 @@ $ run-predictions.sh training_file models_file data_file
   * `output/plots` - containing a ROC plot image file for each test set and model specified as input
 
 _Note_. Before running the prediction experiment, the file `test.R` must be manually edited in order customize the `tuneGrid` var (`dataframe`) containing the best param configuration for each learner model. As of now, the script contains the grids for the 4 models in the file `models/top-cluster.txt`.
+
+## Testing the scripts
+When executed _without_ running the .sh files (e.g., via RStudio or Rscript), these scripts by default open the test file `input/example.csv`, which contains a few hundred lines from the Stack Overflow dataset. This test file is intended to show how the scripts work in general and the output they produce. Beware of the longest executing time when running with the other input files.
