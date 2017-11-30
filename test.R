@@ -9,6 +9,7 @@ library(caret)
 library(DMwR)
 library(ROCR)
 library(pROC)
+library(IDPmisc)
 
 if(!exists("save_results", mode="function")) 
   source(paste(getwd(), "lib/save_results.R", sep="/"))
@@ -27,11 +28,12 @@ outcomeName <- "solution"
 excluded_predictors <- c("resolved", "answer_uid", "question_uid", "views", "views_rank",
                          "has_code_snippet", "has_tags", "loglikelihood_descending_rank", "F.K_descending_rank")
 
-csv_file <- ifelse(is.na(args[1]), "input/so_341k.csv", args[1])
+csv_file <- ifelse(is.na(args[1]), "input/example.csv", args[1])
 temp <- read.csv(csv_file, header = TRUE, sep=",")
 temp <- setup_dataframe(dataframe = temp, outcomeName = outcomeName, excluded_predictors = excluded_predictors,
                         time_format="%Y-%m-%d %H:%M:%S", normalize = TRUE, na_omit = TRUE)
 SO <- temp[[1]]
+SO <- NaRV.omit(SO)
 predictorsNames <- temp[[2]]
 
 choice <- ifelse(is.na(args[2]), "so", args[2])
@@ -70,6 +72,7 @@ if(choice == "so") {
   temp <- read.csv(csv_file, header = TRUE, sep=sep)
   temp <- setup_dataframe(dataframe = temp, outcomeName = outcomeName, excluded_predictors = excluded_predictors,
                           time_format=time_format, normalize = FALSE)
+  testing <- NaRV.omit(testing)
   testing <- temp[[1]]
 }
 
@@ -79,12 +82,14 @@ rm(temp)
 # garbage collection
 gc()
 
-models_file <- ifelse(is.na(args[3]), "models/top-cluster.txt", args[3])
+models_file <- ifelse(is.na(args[3]), "models/top-models1.txt", args[3])
 classifiers <- readLines(models_file)
 predictions <- c()
 cmatrices <- c()
 aucs <- c()
+rocobjs <- c()
 prec_rec <- c()
+
 
 # for model: XYZ
 set.seed(875)
@@ -99,6 +104,28 @@ for(i in 1:length(classifiers)){
   classifiers[i] <- classifier
   
   print(paste("Testing performance of classifier", classifier)) 
+  if(classifier == "xgbTree") {
+    grid <- data.frame(nrounds = 200, 
+                       max_depth = 4, 
+                       eta = 0.1, 
+                       gamma = 0, 
+                       colsample_bytree = 1, 
+                       min_child_weight = 1,
+                       subsample = 1) 
+  }
+  else if(classifier == "gbm") {
+    grid <- data.frame(n.trees = 250, 
+                       interaction.depth = 3, 
+                       shrinkage = 0.1,
+                       n.minobsinnode = 10)
+  }
+  else if(classifier == "pcaNNet") {
+    grid <- data.frame(size = 7, decay = 0.1)
+  }
+  else if(classifier == "earth") {
+    grid <- data.frame(nprune = 15, degree = 1)
+  }
+
   model <- caret::train(solution ~ ., 
                         data = SO,
                         method = classifier,
@@ -108,7 +135,9 @@ for(i in 1:length(classifiers)){
   pred_prob <- predict(model, testing[,predictorsNames], type = 'prob')
   model.prediction_prob <- ROCR::prediction(pred_prob[,2], testing[,outcomeName])
   predictions <- c(predictions, model.prediction_prob)
-  aucs <- c(aucs, roc(as.numeric(testing[,outcomeName])-1, pred_prob[,2])$auc)
+  rocobj <- pROC::roc(testing[,outcomeName], pred_prob[,2], levels=c("False", "True"), direction="<")
+  rocobjs[i] <- list(rocobj)
+  aucs <- c(aucs, rocobj$auc)
   aucs <- round(aucs, digits = 2)
   
   pred <- predict(model, testing[,predictorsNames])
@@ -160,3 +189,21 @@ plot_curve(predictions=predictions, classifiers=classifiers,
            leg_title="", main_title="", leg_horiz=FALSE, aucs=aucs)
 dev.off()
 par(op) #re-set the plot to the default settings
+
+# ROC test between the first two motels
+print("Performing ROC test")
+c1 <- rocobjs[[1]]
+c2 <- rocobjs[[2]]
+print("Performing ROC test")
+rtd <- roc.test(c1, c2, paired=TRUE, alternative="two.sided", direction="<",  method = "delong")
+print(rtd)
+#rtb <- roc.test(c1, c2, paired=TRUE, alternative="two.sided", direction="<", method = "bootstrap")
+#print(rtb)
+# rtv <- roc.test(c1, c2, paired=TRUE, alternative="two.sided", direction="<", method = "venkatraman")
+# print(rtv)
+print("Power of ROC test")
+prt <- power.roc.test(c1, c2, paired=TRUE, alternative="two.sided", sig.level = 0.01, method = "delong")
+print(prt)
+
+save_results(outfile = "roc-test.txt", outdir = paste("output/plots", choice, sep="/"), 
+             classifiers = classifiers, results = c(list(rtd), list(prt)), expanded = FALSE)
