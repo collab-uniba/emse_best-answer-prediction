@@ -21,7 +21,7 @@ A description of each feature is also avaialble.
 ### Setup
 To ensure proper execution, first run the following commands to check for the presence and eventually install all the required packages for R and Python.
 ```
-$ RScripts requirements.R
+$ RScript requirements.R
 $ pip install -r requirements.txt
 ```
 
