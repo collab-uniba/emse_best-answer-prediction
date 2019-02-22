@@ -1,4 +1,4 @@
-# Dataset, scripts, and additional material for Best-Answer Prediction in Technical Q&A Sites 
+# Dataset, scripts, and additional material for the paper "Best-Answer Prediction in Technical Q&A Sites" 
 [![DOI](https://zenodo.org/badge/72824857.svg)](https://zenodo.org/badge/latestdoi/72824857)
 
 ## Citation
